@@ -6,7 +6,6 @@ import MetaData from "./metadata.js";
 import ButtonComponent from "./button.js";
 
 export default class Card extends Component {
-  type;
   imageSrc;
   imageAlt;
   nameFamily;
@@ -15,22 +14,18 @@ export default class Card extends Component {
   typeEmoji;
   arrayOfCategories;
   arrayOfAnswers;
-  constructor(
-    parentElement,
-    imageData,
-    cardBodyData,
-    typeEmoji,
-    arrayOfCategories,
-    arrayOfAnswers,
-    type
-  ) {
+  type;
+  constructor(parentElement, informationLoad, type) {
     super(parentElement, `character col li--${type}`, "li");
-    [this.imageSrc, this.imageAlt] = imageData;
-    [this.nameFamily, this.age, this.state] = cardBodyData;
-    this.typeEmoji = typeEmoji;
-    this.arrayOfCategories = arrayOfCategories;
-    this.arrayOfAnswers = arrayOfAnswers;
-    this.type = type;
+    [
+      this.imageData,
+      this.cardBodyData,
+      this.typeEmoji,
+      this.arrayOfCategories,
+      this.arrayOfAnswers,
+    ] = informationLoad;
+    [this.imageSrc, this.alt] = this.imageData;
+    [this.nameFamily, this.age, this.state] = this.cardBodyData;
     this.createSonHtml();
     this.appendCardParts();
     this.appendOnCardBody();
