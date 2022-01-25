@@ -13,6 +13,7 @@ module.exports = {
     "no-restricted-syntax": "off",
     "no-debugger": "off",
     "no-console": "off",
+    "no-new": "off",
     "lines-between-class-members": [
       "error",
       "always",
